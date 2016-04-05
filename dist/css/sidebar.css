@@ -1,0 +1,38 @@
+/* Toggle Styles */
+
+/* Sidebar Styles */
+
+#sidebar-wrapper{
+    padding-right: 0;
+    padding-top: 10px;
+    border-top: 2px solid #456176;
+    list-style: none;
+    background-color: #ecf0f1;
+}
+
+.nav-list {
+    padding-left: 20px;
+}
+
+.nav-list-sub {
+    padding-left: 34px;
+}
+
+.nav-icon {
+    padding-right: 10px;
+}
+
+.nav-list > li {
+    display: block;
+    cursor: pointer;
+}
+
+.nav-header {
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.nav-content > a {
+    font-size: 0.7em;
+    color: #2c3e50;
+}
