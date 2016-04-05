@@ -18,7 +18,7 @@
   </div>
 
   <script src="bundle.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <script src="./js/jquery.min.js" onload="window.$ = window.jQuery = module.exports; //Fix for bootstrap not finding jquery "></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/script.js"></script>
 </body>
