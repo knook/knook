@@ -7,6 +7,11 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  devServer: {
+    contentBase: '../src/client',
+    publicPath: 'http://localhost:3000'
+  },
+
   module: {
     loaders: [
       {

@@ -1,7 +1,7 @@
 {
-  "name": "react-way-getting-started",
+  "name": "knook",
   "version": "1.0.0",
-  "description": "The React Way - Getting Started",
+  "description": "Knook mailer",
   "main": "src/server/index.js",
   "scripts": {
     "test": "jest",
@@ -14,14 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RisingStack/react-way-getting-started.git"
+    "url": "https://github.com/knook/knook.git"
   },
-  "author": "RisingStack, Peter Marton",
+  "author": "Olivier Graziano, Olivier Marin, Alexandre Lagrange-Cetto",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/RisingStack/react-way-getting-started/issues"
-  },
-  "homepage": "https://github.com/RisingStack/react-way-getting-started",
   "dependencies": {
     "debug": "^2.1.3",
     "express": "^4.12.3",
@@ -31,9 +27,10 @@
     "babel": "^5.0.12",
     "babel-core": "^5.0.12",
     "babel-loader": "^5.0.0",
+    "electron-prebuilt": "^0.35.2",
     "jest-cli": "^0.4.0",
     "webpack": "^1.8.4",
-    "electron-prebuilt": "^0.35.2"
+    "webpack-dev-server": "^1.14.1"
   },
   "jest": {
     "scriptPreprocessor": "./tools/preprocessor.js",

@@ -1,35 +1,15 @@
-import Debug from 'debug';
-import App from '../../app';
+import Navbar from '../../app/header';
+import Sidebar from '../../app/leftPanel';
 
-var attachElement = document.getElementById('app');
+var headerElement = document.getElementById('header');
+var sidebarElement = document.getElementById('sidebar');
 
-var state = {
-  cart: {
-    title: 'My Cart',
-    items: [
-      {
-        title: 'Item 1',
-        price: 12
-      },
-      {
-        title: 'Item 2',
-        price: 21
-      },
-      {
-        title: 'Item 3',
-        price: 33
-      }
-    ]
-  }
-};
+var header;
+var sidebar;
 
-var app;
+header = new Navbar();
+sidebar = new Sidebar();
 
-Debug.enable('myApp*');
+header.renderToDOM(headerElement);
+sidebar.renderToDOM(sidebarElement);
 
-// Create new app and attach to element
-app = new App({
-  state: state
-});
-
-app.renderToDOM(attachElement);
