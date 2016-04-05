@@ -21,7 +21,7 @@ class Navbar extends React.Component {
         <nav className="navbar">
             <div className="container-fluid" id="navbar-container">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="#">Mailer</a>
+                    <a className="navbar-brand" href="#">Knook</a>
                 </div>
                 <div className="collapse navbar-collapse">
                     <ul className="nav navbar-nav">

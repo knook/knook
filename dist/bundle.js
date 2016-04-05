@@ -22713,7 +22713,7 @@
 	                            _reactAddons2["default"].createElement(
 	                                "a",
 	                                { className: "navbar-brand", href: "#" },
-	                                "Mailer"
+	                                "Knook"
 	                            )
 	                        ),
 	                        _reactAddons2["default"].createElement(

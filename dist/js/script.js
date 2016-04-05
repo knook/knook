@@ -7,6 +7,7 @@ $(function(){
 
     var winHeight = window.innerHeight;
     $('#sidebar-wrapper').css('height', winHeight-50);
+    console.log("ta mère");
 
 
 

@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
+app.get('/prefs', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../client/prefs.html'));
+});
+
 server = app.listen(process.env.PORT || 3000, () => {
   var port = server.address().port;
 

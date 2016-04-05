@@ -1,5 +1,6 @@
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var ipc = require('ipc');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -17,17 +18,44 @@ app.on('window-all-closed', function() {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', function() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1000, height: 625});
+    // Create the browser window.
+    mainWindow = new BrowserWindow({width: 1000, height: 625});
 
-  // and load the index.html of the app.
-  mainWindow.loadURL('http://localhost:3000/');
+    // and load the index.html of the app.
+    mainWindow.loadURL('http://localhost:3000/');
 
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
+    mainWindow.openDevTools();
+
+    // Emitted when the window is closed.
+    mainWindow.on('closed', function() {
     mainWindow = null;
-  });
+    });
+
+
+    var prefsWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        show: false
+    });
+
+    prefsWindow.loadURL('http://localhost:3000/prefs');
+    ipc.on('toggle-prefs', function () {
+        if(prefsWindow.isVisible())
+            prefsWindow.hide();
+        else
+            prefsWindow.show();
+    });
+
+    // Emitted when the window is closed.
+    prefsWindow.on('closing', function() {
+        prefsWindow.hide();
+    });
+
+    // Continue to handle mainWindow "close" event here
+    prefsWindow.on('close', function(e){
+        e.preventDefault();
+        prefsWindow.hide();
+    });
 });
+
+
