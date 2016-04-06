@@ -1,5 +1,5 @@
 {
-  "name": "Knook Mailer",
+  "name": "Knook",
   "productName": "Knook",
   "version": "0.0.1",
   "description": "A node JS / React / Electron based mailer",
@@ -23,27 +23,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chentsulin/electron-react-boilerplate.git"
+    "url": "https://github.com/knook/knook.git"
   },
   "author": {
-    "name": "C. T. Lin",
-    "email": "chentsulin@gmail.com",
-    "url": "https://github.com/chentsulin"
+    "name": "Alexandre Lagrange-Cetto, Olivier Graziano, Olivier Marin",
+    "email": "",
+    "url": ""
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chentsulin/electron-react-boilerplate/issues"
-  },
   "keywords": [
     "electron",
-    "boilerplate",
     "react",
     "react-router",
     "flux",
     "webpack",
-    "react-hot"
+    "react-hot",
+    "mailer"
   ],
-  "homepage": "https://github.com/chentsulin/electron-react-boilerplate#readme",
   "devDependencies": {
     "asar": "^0.10.0",
     "babel-core": "^6.7.4",
