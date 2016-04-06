@@ -1,7 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+var ipc = require('ipc');
 
 class Prefs extends Component {
+
+    componentDidMount() {
+        document.getElementById('addAccount').addEventListener('click', function () {
+            ipc.send('toggle-addAccount');
+        });
+    }
 
   render() {
     return (
@@ -12,6 +19,7 @@ class Prefs extends Component {
           </Link>
         </div>
         <h2>Awsome Prefs</h2>
+          <button id="addAccount">Add Account</button>
       </div>
     );
   }
