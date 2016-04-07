@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Knook Mailer</title>
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
-    <script>
-      (function() {
-        if (!process.env.HOT) {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = '../dist/style.css';
-          document.write(link.outerHTML);
-        }
-      }());
-    </script>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <title>Knook Mailer</title>
+        <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+        <script>
+            (function () {
+                if (!process.env.HOT) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = '../dist/style.css';
+                    document.write(link.outerHTML);
+                }
+            }());
+        </script>
+    </head>
+    <body>
     <div id="root"></div>
     <script>
-      (function() {
-        const script = document.createElement('script');
-        script.src = (process.env.HOT) ? 'http://localhost:3000/dist/bundle.js' : '../dist/bundle.js';
-        document.write(script.outerHTML);
-      }());
+        (function () {
+            const script = document.createElement('script');
+            script.src = (process.env.HOT) ? 'http://localhost:3000/dist/bundle.js' : '../dist/bundle.js';
+            document.write(script.outerHTML);
+        }());
     </script>
-  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  </body>
+
+
+    <script src="../node_modules/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/script.js"></script>
+    </body>
 </html>

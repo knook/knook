@@ -9,7 +9,7 @@ import AddAccountPage from './containers/AddAccountPage';
 export default (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage}/>
-        <Route path="/prefs" component={PrefsPage}/>
+        <Route name="prefs" path="/prefs" component={PrefsPage}/>
         <Route path="/addAccount" component={AddAccountPage}/>
     </Route>
 );

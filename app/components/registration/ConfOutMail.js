@@ -22,32 +22,35 @@ var ConfOutMail = React.createClass({
     render: function () {
         return (
             <div>
+                <div className="col-md-12">
+                    <a className="btn-default" onClick={this.props.previousStep}>
+                        <i className="fa fa-arrow-left fa-3x" />
+                    </a>
+                </div>
                 <h2>Configure outgoing mail</h2>
-                <div className="form-fields">
+                <form className="form-horizontal col-xs-10 col-xs-offset-1">
                     <div className="form-group">
-                        <label for="imapServer">SMTP Server</label>
-                        <input type="text" id="smtpServer" ref="smtpServer" defaultValue={this.props.fieldValues.smtpServer}/>
+                        <label htmlFor="imapServer" className="control-label">SMTP Server</label>
+                        <input type="text" className="form-control" id="smtpServer" ref="smtpServer" defaultValue={this.props.fieldValues.smtpServer}/>
                     </div>
                     <div className="form-group">
-                        <label for="smtpPort">Port (optional)</label>
-                        <input type="text" id="smtpPort" ref="smtpPort" defaultValue={this.props.fieldValues.smtpPort}/>
+                        <label htmlFor="smtpPort" className="control-label">Port (optional)</label>
+                        <input type="text" className="form-control" id="smtpPort" ref="smtpPort" defaultValue={this.props.fieldValues.smtpPort}/>
                     </div>
                     <li className="checkbox">
-                        {['Required SSL'].map(this.renderOptions.bind(this, 'checkbox', 'smtpSSL'))}
+                        {['required'].map(this.renderOptions.bind(this, 'checkbox', 'smtpSSL'))}
                     </li>
                     <div className="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" ref="smtpUsername" defaultValue={this.props.fieldValues.smtpUsername}/>
+                        <label htmlFor="username" className="control-label">Username</label>
+                        <input type="text" className="form-control" id="username" ref="smtpUsername" defaultValue={this.props.fieldValues.smtpUsername}/>
                     </div>
                     <div className="form-group">
-                        <label for="pass">Password</label>
-                        <input type="password" id="pass" ref="smtpPassword" defaultValue={this.props.fieldValues.smtpPassword}/>
+                        <label htmlFor="pass" className="control-label">Password</label>
+                        <input type="password" className="form-control" id="pass" ref="smtpPassword" defaultValue={this.props.fieldValues.smtpPassword}/>
                     </div>
-                    <li className="form-footer">
-                        <button className="btn -default pull-left" onClick={this.props.previousStep}>Back</button>
-                        <button className="btn -primary pull-right" onClick={this.nextStep}>Save &amp; Continue</button>
-                    </li>
-                </div>
+
+                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Save &amp; Continue</button>
+                </form>
             </div>
         )
     },

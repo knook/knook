@@ -5,18 +5,18 @@ var AccountFields = React.createClass({
         return (
             <div>
                 <h2>Account Details</h2>
-                <div className="form-fields">
+                <form className="form-horizontal col-xs-10 col-xs-offset-1">
                     <div className="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" ref="name" defaultValue={this.props.fieldValues.name}/>
+                        <label htmlFor="name" className="control-label">Name</label>
+                        <input type="text" className="form-control" id="name" ref="name" defaultValue={this.props.fieldValues.name}/>
                     </div>
                     <div className="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" ref="email" defaultValue={this.props.fieldValues.email}/>
+                        <label htmlFor="email" className="control-label">Email</label>
+                        <input type="email" className="form-control" id="email" ref="email" defaultValue={this.props.fieldValues.email}/>
                     </div>
 
-                    <button className="btn -primary" onClick={this.nextStep}>Save &amp; Continue</button>
-                </div>
+                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Save &amp; Continue</button>
+                </form>
             </div>
         )
     },

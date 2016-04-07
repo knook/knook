@@ -85,14 +85,23 @@ var Registration = React.createClass({
 
     render: function () {
         var style = {
-            width: (this.state.step / 4 * 100) + '%'
+            width: ((this.state.step-1)/ 4 * 100) + '%'
         }
 
         return (
             <main>
-                <span className="progress-step">Step {this.state.step}</span>
-                <progress className="progress" style={style}></progress>
-                {this.showStep()}
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="progress col-*-10 col-*-offset-1">
+                            <div className="progress-bar" role="progressbar" style={style}>
+                                {style.width}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        {this.showStep()}
+                    </div>
+                </div>
             </main>
         )
     }

@@ -15,7 +15,7 @@ class Navbar extends Component {
                     <ul className="nav navbar-nav">
                         <li>
                             <button type="button" className="btn btn-square">
-                                <img src="img/mode_edit_black_18x18.png" alt="newMail"/>
+                                <img src="../dist/img/mode_edit_black_18x18.png" alt="newMail"/>
                             </button>
                         </li>
 

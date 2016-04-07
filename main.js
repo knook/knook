@@ -14,7 +14,6 @@ let mainWindow = null;
 
 var ipc = require('ipc');
 
-
 crashReporter.start();
 
 if (process.env.NODE_ENV === 'development') {
@@ -55,6 +54,14 @@ app.on('ready', () => {
             label: 'About Knook',
             selector: 'orderFrontStandardAboutPanel:'
         }, {
+            type: 'separator'
+        },{
+            label: 'Preferences',
+            accelerator: 'Cmd+,',
+            click: function () {
+                mainWindow.loadURL(`file://${__dirname}/app/app.html#/prefs`);
+            }
+        },{
             type: 'separator'
         }, {
             label: 'Services',
