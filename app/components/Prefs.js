@@ -19,7 +19,7 @@ class Prefs extends Component {
           </Link>
         </div>
         <h2>Awsome Prefs</h2>
-          <button id="addAccount">Add Account</button>
+          <Link to="/addAccount" target="_blank">add account</Link>
       </div>
     );
   }
