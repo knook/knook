@@ -6,19 +6,25 @@ import React, { Component } from 'react';
 class Navbar extends Component {
 
     render () {
-        return <nav className="navbar">
+        return <nav className="navbar navbar-static-top">
             <div className="container-fluid" id="navbar-container">
-                <div className="navbar-header">
-                    <a className="navbar-brand" href="#">Knook</a>
-                </div>
                 <div className="collapse navbar-collapse">
-                    <ul className="nav navbar-nav">
+                    <ul className="nav navbar-nav" id="btn-newMail">
                         <li>
                             <button type="button" className="btn btn-square">
                                 <img src="../dist/img/mode_edit_black_18x18.png" alt="newMail"/>
                             </button>
                         </li>
-
+                    </ul>
+                    <form className="navbar-form navbar-left" role="search">
+                        <div className="form-group" id="header-search">
+                            <input type="text" className="form-control" placeholder="Search"/>
+                        </div>
+                        <button type="submit" className="btn btn-square">
+                            <img src="../dist/img/search_black_18x18.png"/>
+                        </button>
+                    </form>
+                    <ul className="nav navbar-nav">
                         <li><a href="#">Link</a></li>
                         <li className="dropdown">
                             <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
