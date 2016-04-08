@@ -5,6 +5,8 @@ var Success = require('./Success');
 var ConfInMail = require('./ConfInMail');
 var ConfOutMail = require('./ConfOutMail');
 import assign from 'object-assign'
+var remote = require('remote');
+var ipc = require('ipc');
 
 // Idealy, these form values would be saved in another
 // sort of persistence, like a Store via Flux pattern
@@ -56,6 +58,16 @@ var Registration = React.createClass({
         this.nextStep()
     },
 
+    renderPreviousArrow: function () {
+        if(this.state.step > 1) {
+            return <div className="col-md-12">
+                        <a className="" onClick={this.previousStep}>
+                            <i className="fa fa-arrow-left fa-2x" />
+                        </a>
+                    </div>
+        }
+    },
+
     showStep: function () {
         switch (this.state.step) {
             case 1:
@@ -99,6 +111,7 @@ var Registration = React.createClass({
                         </div>
                     </div>
                     <div className="row">
+                        {this.renderPreviousArrow()}
                         {this.showStep()}
                     </div>
                 </div>

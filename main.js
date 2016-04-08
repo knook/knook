@@ -11,6 +11,7 @@ const shell = electron.shell;
 let menu;
 let template;
 let mainWindow = null;
+let addAccountWindow = null;
 
 var ipc = require('ipc');
 
@@ -42,6 +43,20 @@ app.on('ready', () => {
 
     mainWindow.on('closed', () => {
         mainWindow = null;
+    });
+
+
+    ipc.on('toggle-addAccount', function () {
+        addAccountWindow = new BrowserWindow({
+            show: true,
+            width: 350,
+            height: 600,
+            titleBarStyle: 'hidden',
+            resizable: false
+        });
+
+        addAccountWindow.closeDevTools();
+        addAccountWindow.loadURL(`file://${__dirname}/app/app.html#/addAccount`);
     });
 
     // Dev Tools

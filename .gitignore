@@ -46,3 +46,6 @@ tmp
 # JetBrains project Files
 .idea
 *.iml
+
+# Maquette
+maquette

@@ -12,8 +12,7 @@ class AddAccount extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
-                <h2>Add account</h2>
+            <div className="container-fluid" id="reg-content">
                 <Registration/>
             </div>
         );

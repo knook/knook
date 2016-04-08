@@ -4,8 +4,7 @@ var Confirmation = React.createClass({
     render: function () {
         return (
             <div>
-                <h2>Confirm Registration</h2>
-                <button className="btn-default pull-left" onClick={this.props.previousStep}>Back</button>
+                <h3>Confirm Registration</h3>
                 <ul>
                     <li><b>Name:</b> {this.props.fieldValues.name}</li>
                     <li><b>Email:</b> {this.props.fieldValues.email}</li>
@@ -19,7 +18,7 @@ var Confirmation = React.createClass({
                     <li><b>SMTP SSL:</b> {this.props.fieldValues.smtpSSL}</li>
                 </ul>
 
-                <button className="btn -primary pull-right" onClick={this.props.submitRegistration}>Submit Registration</button>
+                <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.props.submitRegistration}>Submit</button>
             </div>
         )
     }

@@ -4,7 +4,7 @@ var AccountFields = React.createClass({
     render: function () {
         return (
             <div>
-                <h2>Account Details</h2>
+                <h3>Account Details</h3>
                 <form className="form-horizontal col-xs-10 col-xs-offset-1">
                     <div className="form-group">
                         <label htmlFor="name" className="control-label">Name</label>
@@ -15,7 +15,7 @@ var AccountFields = React.createClass({
                         <input type="email" className="form-control" id="email" ref="email" defaultValue={this.props.fieldValues.email}/>
                     </div>
 
-                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Save &amp; Continue</button>
+                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Continue</button>
                 </form>
             </div>
         )

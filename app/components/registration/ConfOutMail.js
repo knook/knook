@@ -22,24 +22,24 @@ var ConfOutMail = React.createClass({
     render: function () {
         return (
             <div>
-                <div className="col-md-12">
-                    <a className="btn-default" onClick={this.props.previousStep}>
-                        <i className="fa fa-arrow-left fa-3x" />
-                    </a>
-                </div>
-                <h2>Configure outgoing mail</h2>
+                <h3>Configure outgoing mail</h3>
                 <form className="form-horizontal col-xs-10 col-xs-offset-1">
                     <div className="form-group">
                         <label htmlFor="imapServer" className="control-label">SMTP Server</label>
                         <input type="text" className="form-control" id="smtpServer" ref="smtpServer" defaultValue={this.props.fieldValues.smtpServer}/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="smtpPort" className="control-label">Port (optional)</label>
-                        <input type="text" className="form-control" id="smtpPort" ref="smtpPort" defaultValue={this.props.fieldValues.smtpPort}/>
+                        <div className="col-xs-7">
+                            <label htmlFor="smtpPort" className="control-label">Port (optional)</label>
+                            <input type="text" className="form-control" id="smtpPort" ref="smtpPort" defaultValue={this.props.fieldValues.smtpPort}/>
+                        </div>
+                        <div className="col-xs-5">
+                            <li className="checkbox">
+                                {['required'].map(this.renderOptions.bind(this, 'checkbox', 'smtpSSL'))}
+                            </li>
+                        </div>
                     </div>
-                    <li className="checkbox">
-                        {['required'].map(this.renderOptions.bind(this, 'checkbox', 'smtpSSL'))}
-                    </li>
+
                     <div className="form-group">
                         <label htmlFor="username" className="control-label">Username</label>
                         <input type="text" className="form-control" id="username" ref="smtpUsername" defaultValue={this.props.fieldValues.smtpUsername}/>
@@ -49,7 +49,7 @@ var ConfOutMail = React.createClass({
                         <input type="password" className="form-control" id="pass" ref="smtpPassword" defaultValue={this.props.fieldValues.smtpPassword}/>
                     </div>
 
-                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Save &amp; Continue</button>
+                    <button type="button" className="btn btn-success col-xs-6 col-xs-offset-6" onClick={this.nextStep}>Continue</button>
                 </form>
             </div>
         )
