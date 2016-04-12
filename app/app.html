@@ -6,12 +6,13 @@
         <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../dist/css/jquery-ui.min.css"/>
         <script>
             (function () {
                 if (!process.env.HOT) {
                     const link = document.createElement('link');
                     link.rel = 'stylesheet';
-                    link.href = '../dist/style.css';
+                    link.href = '../dist/css/style.css';
                     document.write(link.outerHTML);
                 }
             }());
@@ -29,6 +30,7 @@
 
 
     <script src="../node_modules/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="../dist/js/jquery-ui.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../dist/js/script.js"></script>
     </body>

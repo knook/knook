@@ -11,10 +11,10 @@ export default class HomePage extends Component {
                 <Navbar/>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-md-3" id="sidebar">
+                        <div className="col-md-3 col-sm-3" id="sidebar">
                             <SideBar/>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-9 col-sm-9">
                             <Home/>
                         </div>
                     </div>

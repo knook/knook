@@ -1,0 +1,23 @@
+#sidebar {
+    padding-left: 0;
+    padding-top: 20px;
+    background-color: #ecf0f1;
+    min-width: 180px;
+    max-width: 330px;
+    -webkit-user-select: none;
+}
+
+.nav-list {
+    padding-left: 15px;
+    list-style-type: none;
+}
+
+.nav-header {
+    line-height: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.nav-content {
+    font-size: 15px;
+}

@@ -32,6 +32,7 @@ app.on('ready', () => {
         show: false,
         width: 1024,
         height: 728,
+        'min-width': 760,
         titleBarStyle: 'hidden'
     });
 
@@ -44,6 +45,12 @@ app.on('ready', () => {
 
     mainWindow.on('closed', () => {
         mainWindow = null;
+    });
+
+    mainWindow.on('resize', function (e) {
+        if(mainWindow.getSize()[0] < 750)
+            e.preventDefault();
+        console.log(mainWindow.getSize()[0] < 750);
     });
 
 

@@ -1,0 +1,30 @@
+#prefs-content {
+}
+
+#backToInbox {
+    margin-left: 80px;
+    font-size: 20px;
+    padding-top: 4px;
+    height: 40px;
+}
+
+#backToInbox > a {
+    color: #2c3e50;
+    display: block;
+}
+
+#backToInbox > a:hover {
+    text-decoration: none;
+}
+
+#backToInbox > a > span.glyphicon {
+    font-size: 35px;
+}
+
+#backToInbox > a > span#backTxt {
+    margin-left: 15px;
+}
+
+#backToInbox > a > span {
+    vertical-align: middle;
+}

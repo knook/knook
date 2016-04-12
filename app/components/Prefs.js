@@ -12,12 +12,15 @@ class Prefs extends Component {
 
   render() {
     return (
-      <div>
-        <div className="backButton">
-          <Link to="/">
-            <i className="fa fa-arrow-left fa-3x" />
-          </Link>
-        </div>
+      <div id="prefs-content">
+          <div className="navbar">
+              <div id="backToInbox" className="col-sm-2">
+                  <Link to="/">
+                      <span className="glyphicon glyphicon-menu-left"/>
+                      <span id="backTxt">Back</span>
+                  </Link>
+              </div>
+          </div>
         <h2>Awsome Prefs</h2>
           <Link id="addAccount" to="/prefs">add account</Link>
       </div>

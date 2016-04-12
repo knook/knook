@@ -1,28 +1,8 @@
-#navbar-container {
-    padding-left: 75px;
-}
+@import "css/navbar.css";
+@import "css/sidebar.css";
+@import "css/prefs.css";
 
-.navbar {
-    margin-bottom: 0;
-    border-radius: 0;
-    -webkit-user-select: none;
-    -webkit-app-region: drag;
-    background: -webkit-linear-gradient(rgba(233, 233, 233, 1.0), rgb(214, 214, 214) 50px, #EDEDED, #EDEDED 50px);
-}
 
-.navbar .navbar-nav > li > a {
-    color: #2c3e50;
-}
-
-.navbar .navbar-brand {
-    color: #2c3e50;
-}
-
-.navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus {
-    color: #333;
-    background-color: transparent;
-}
 
 .btn-square {
     height: 30px;
@@ -32,34 +12,7 @@
     border: 1px solid #bdc3c7;
 }
 
-#header-search{
-    margin-right: 10px;
-}
-
-#btn-newMail {
-    margin-top: 10px;
-}
-
-.btn-square.btn-search {
-    margin-top: 0;
-}
-
-#sidebar {
-    padding-left: 0;
-    padding-top: 20px;
-    background-color: #ecf0f1;
-}
-
-.nav-list {
-    padding-left: 15px;
-    list-style-type: none;
-}
-
-.nav-header {
-    line-height: 20px;
-    margin-top: 10px;
-}
-
 #reg-content {
     margin-top: 40px;
 }
+

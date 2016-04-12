@@ -52,9 +52,14 @@ var Registration = React.createClass({
 
     submitRegistration: function () {
         // Handle via ajax submitting the user data, upon
-        // success return this.nextStop(). If it fails,
+        // success return this.nextStep(). If it fails,
         // show the user the error but don't advance
-
+        
+        //@TODO: test imap connection
+        //@TODO: test smtp connection
+        //@TODO: If all works, push the object in .config.json
+        
+        
         this.nextStep()
     },
 
