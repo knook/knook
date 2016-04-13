@@ -4,7 +4,7 @@
 
 var nodemailer = require('nodemailer');
 
-class CheckConnectivity {
+class Smtp {
 
     static checkSMTP(Account) {
         console.log("In SMTP Check");
@@ -20,7 +20,7 @@ class CheckConnectivity {
                 pass: Account['smtpPassword']
             }
         };
-        
+
         // create reusable transporter object using the default SMTP transport
         var transporter = nodemailer.createTransport(smtpConfig);
         transporter.verify(function(error, success) {
@@ -36,4 +36,4 @@ class CheckConnectivity {
 
 }
 
-export default CheckConnectivity;
+export default Smtp;

@@ -7,7 +7,8 @@ var ConfOutMail = require('./ConfOutMail');
 import assign from 'object-assign'
 var remote = require('remote');
 var ipc = require('ipc');
-var CheckConnectivity = require('../../core/CheckConnectivity');
+var Smtp = require('../../core/Smtp');
+var fs = require('fs');
 
 
 // Idealy, these form values would be saved in another
@@ -60,9 +61,8 @@ var Registration = React.createClass({
         //@TODO: test imap connection
         
         //@TODO: test smtp connection
-        CheckConnectivity.checkSMTP(fieldValues);
+        Smtp.checkSMTP(fieldValues);
         //@TODO: If all works, push the object in .config.json
-
 
         this.nextStep()
     },
