@@ -2,7 +2,11 @@
 @import "css/sidebar.css";
 @import "css/prefs.css";
 
-
+body {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
 
 .btn-square {
     height: 30px;

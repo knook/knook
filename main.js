@@ -51,6 +51,7 @@ app.on('ready', () => {
         if(mainWindow.getSize()[0] < 750)
             e.preventDefault();
         console.log(mainWindow.getSize()[0] < 750);
+        
     });
 
 
