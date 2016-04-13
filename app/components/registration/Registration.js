@@ -61,10 +61,15 @@ var Registration = React.createClass({
         //@TODO: test imap connection
         
         //@TODO: test smtp connection
-        Smtp.checkSMTP(fieldValues);
-        //@TODO: If all works, push the object in .config.json
+        Smtp.checkSMTP(fieldValues, function(res){
 
-        this.nextStep()
+            console.log(res);
+
+            //@TODO: If all works, push the object in .config.json
+
+            this.nextStep()
+        });
+
     },
 
     renderPreviousArrow: function () {
