@@ -7,6 +7,8 @@ var ConfOutMail = require('./ConfOutMail');
 import assign from 'object-assign'
 var remote = require('remote');
 var ipc = require('ipc');
+var CheckConnectivity = require('../../core/CheckConnectivity');
+
 
 // Idealy, these form values would be saved in another
 // sort of persistence, like a Store via Flux pattern
@@ -19,7 +21,7 @@ var fieldValues = {
     imapPassword: null,
     imapSSL: [],
     smtpServer: null,
-    smtpPort: 587,
+    smtpPort: 465,
     smtpUsername: null,
     smtpPassword: null,
     smtpSSL: []
@@ -54,22 +56,24 @@ var Registration = React.createClass({
         // Handle via ajax submitting the user data, upon
         // success return this.nextStep(). If it fails,
         // show the user the error but don't advance
-        
+
         //@TODO: test imap connection
+        
         //@TODO: test smtp connection
+        CheckConnectivity.checkSMTP(fieldValues);
         //@TODO: If all works, push the object in .config.json
-        
-        
+
+
         this.nextStep()
     },
 
     renderPreviousArrow: function () {
-        if(this.state.step > 1) {
+        if (this.state.step > 1) {
             return <div className="col-md-12">
-                        <a className="" onClick={this.previousStep}>
-                            <i className="fa fa-arrow-left fa-2x" />
-                        </a>
-                    </div>
+                <a className="" onClick={this.previousStep}>
+                    <i className="fa fa-arrow-left fa-2x"/>
+                </a>
+            </div>
         }
     },
 
@@ -82,14 +86,14 @@ var Registration = React.createClass({
                                       saveValues={this.saveValues}/>
             case 2:
                 return <ConfInMail fieldValues={fieldValues}
-                                     nextStep={this.nextStep}
-                                     previousStep={this.previousStep}
-                                     saveValues={this.saveValues}/>
-            case 3:
-                return <ConfOutMail fieldValues={fieldValues}
                                    nextStep={this.nextStep}
                                    previousStep={this.previousStep}
                                    saveValues={this.saveValues}/>
+            case 3:
+                return <ConfOutMail fieldValues={fieldValues}
+                                    nextStep={this.nextStep}
+                                    previousStep={this.previousStep}
+                                    saveValues={this.saveValues}/>
 
             case 4:
                 return <Confirmation fieldValues={fieldValues}
@@ -102,7 +106,7 @@ var Registration = React.createClass({
 
     render: function () {
         var style = {
-            width: ((this.state.step-1)/ 4 * 100) + '%'
+            width: ((this.state.step - 1) / 4 * 100) + '%'
         }
 
         return (
