@@ -8,7 +8,9 @@ import assign from 'object-assign'
 var remote = require('remote');
 var ipc = require('ipc');
 var CheckConnectivity = require('../../core/checkConnectivity');
+var HandleJSON = require('../../core/handleJSON');
 var async = require('async');
+var fs = require('fs');
 
 
 // Idealy, these form values would be saved in another
@@ -59,10 +61,7 @@ var Registration = React.createClass({
         // show the user the error but don't advance
 
         var that = this;
-        var smtpOK = false;
-        var imapOK = false;
-        var smtpErr;
-        var imapErr;
+
         async.series([
             function (callback) {
                 console.log("Test SMTP");
@@ -79,15 +78,22 @@ var Registration = React.createClass({
             console.log("In final callback : smtpOK " + res[0] + " imapOK " + res[1]);
             if(res[0] == "true" && res[1] == "true") {
                 //@TODO: push the object "fieldValues" in .config.json
+                HandleJSON.addAccount(fieldValues, (res) => {
+                    "use strict";
+                   if(res != 1){
+                       //@TODO: print error
+                       console.log(res);
+                   }
+                });
                 that.nextStep()
             }
             else {
                 // @TODO: print errors
                 if(res[0] != "true"){
-                    console.log("SMTP Error : " + smtpErr);
+                    console.log("SMTP Error : " + res[0]);
                 }
                 if(res[1] != "true") {
-                    console.log("IMAP Error: " + imapErr);
+                    console.log("IMAP Error: " + res[1]);
                 }
             }
         });
