@@ -4,11 +4,9 @@
 
 var nodemailer = require('nodemailer');
 
-class Smtp {
+class CheckConnectivity {
 
     static checkSMTP(Account, callback) {
-        console.log("In SMTP Check");
-
         var secure = Account["smtpSSL"] == "required";
 
         var smtpConfig = {
@@ -31,7 +29,7 @@ class Smtp {
                 callback(error);
             } else {
                 //console.log('Server is ready to take our messages');
-                callback(true);
+                callback("true");
             }
         });
 
@@ -40,4 +38,4 @@ class Smtp {
 
 }
 
-export default Smtp;
+export default CheckConnectivity;

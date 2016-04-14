@@ -7,8 +7,8 @@ var ConfOutMail = require('./ConfOutMail');
 import assign from 'object-assign'
 var remote = require('remote');
 var ipc = require('ipc');
-var Smtp = require('../../core/Smtp');
-var fs = require('fs');
+var CheckConnectivity = require('../../core/checkConnectivity');
+var async = require('async');
 
 
 // Idealy, these form values would be saved in another
@@ -58,18 +58,45 @@ var Registration = React.createClass({
         // success return this.nextStep(). If it fails,
         // show the user the error but don't advance
 
-        //@TODO: test imap connection
-        
-        //@TODO: test smtp connection
-        Smtp.checkSMTP(fieldValues, function(res){
+        var that = this;
+        var smtpOK = false;
+        var imapOK = false;
+        var smtpErr;
+        var imapErr;
+        async.series([
+            function (callback) {
+                console.log("Test SMTP");
+                CheckConnectivity.checkSMTP(fieldValues, function(res) {
+                    if(res == "true")
+                        smtpOK = true;
+                    else
+                        smtpErr = res;
 
-            console.log(res);
-
-            //@TODO: If all works, push the object in .config.json
-
-            this.nextStep()
+                    callback();
+                });
+            },
+            //@TODO: test imap connection
+            function (callback) {
+                console.log("Test IMAP");
+                imapOK = true;
+                callback();
+            }
+        ], function () {
+            console.log("In final calback : smtpOK " + smtpOK + " imapOK " + imapOK);
+            if(smtpOK && imapOK) {
+                //@TODO: push the object "fieldValues" in .config.json
+                that.nextStep()
+            }
+            else {
+                // @TODO: print errors
+                if(!smtpOK){
+                    console.log("SMTP Error : " + smtpErr);
+                }
+                if(!imapOK) {
+                    console.log("IMAP Error: " + imapErr);
+                }
+            }
         });
-
     },
 
     renderPreviousArrow: function () {
