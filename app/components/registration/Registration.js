@@ -67,32 +67,26 @@ var Registration = React.createClass({
             function (callback) {
                 console.log("Test SMTP");
                 CheckConnectivity.checkSMTP(fieldValues, function(res) {
-                    if(res == "true")
-                        smtpOK = true;
-                    else
-                        smtpErr = res;
-
-                    callback();
+                    callback(null, res);
                 });
             },
             //@TODO: test imap connection
             function (callback) {
                 console.log("Test IMAP");
-                imapOK = true;
-                callback();
+                callback(null, "true");
             }
-        ], function () {
-            console.log("In final calback : smtpOK " + smtpOK + " imapOK " + imapOK);
-            if(smtpOK && imapOK) {
+        ], function (err, res) {
+            console.log("In final callback : smtpOK " + res[0] + " imapOK " + res[1]);
+            if(res[0] == "true" && res[1] == "true") {
                 //@TODO: push the object "fieldValues" in .config.json
                 that.nextStep()
             }
             else {
                 // @TODO: print errors
-                if(!smtpOK){
+                if(res[0] != "true"){
                     console.log("SMTP Error : " + smtpErr);
                 }
-                if(!imapOK) {
+                if(res[1] != "true") {
                     console.log("IMAP Error: " + imapErr);
                 }
             }

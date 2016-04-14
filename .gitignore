@@ -54,3 +54,4 @@ maquette
 # Electron
 release
 dist
+dist/*
